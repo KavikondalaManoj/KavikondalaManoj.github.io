@@ -6,10 +6,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
   if (prefersDark) body.setAttribute('data-theme', 'dark');
 
-  themeToggle.addEventListener('click', () => {
-    const next = body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-    body.setAttribute('data-theme', next);
-  });
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      const next = body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      body.setAttribute('data-theme', next);
+    });
+  }
 
   /* 2. Animated snapshot counters */
   const counters = document.querySelectorAll('[data-count]');
@@ -67,21 +69,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* 5. Back to top */
   const scrollTopBtn = document.getElementById('scrollTopBtn');
-  scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  if (scrollTopBtn) {
+    scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  }
 
-  /* 6. Contact form -> mailto */
-  const sendEmailBtn = document.getElementById('sendEmailBtn');
-  sendEmailBtn.addEventListener('click', () => {
-    const name = document.getElementById('senderName').value.trim();
-    const subject = document.getElementById('msgSubject').value.trim();
-    const messageBody = document.getElementById('msgBody').value.trim();
-    if (!name || !subject || !messageBody) {
-      alert('Please fill in your name, subject, and message before sending.');
-      return;
-    }
-    const targetEmail = 'KavikondalaManoj@gmail.com';
-    const computedSubject = encodeURIComponent(`[Portfolio] ${subject}`);
-    const formattedBody = encodeURIComponent(`Hi Manoj,\n\n${messageBody}\n\nBest regards,\n${name}`);
-    window.location.href = `mailto:${targetEmail}?subject=${computedSubject}&body=${formattedBody}`;
-  });
+  /* 6. Contact form submission handling (Utilizing native validation mechanics) */
+  const contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    contactForm.addEventListener('submit', (event) => {
+      event.preventDefault(); // Capture execution to apply custom protocol redirect securely
+      
+      const name = document.getElementById('senderName').value.trim();
+      const subject = document.getElementById('msgSubject').value.trim();
+      const messageBody = document.getElementById('msgBody').value.trim();
+      
+      const targetEmail = 'KavikondalaManoj@gmail.com';
+      const computedSubject = encodeURIComponent(`[Portfolio] ${subject}`);
+      const formattedBody = encodeURIComponent(`Hi Manoj,\n\n${messageBody}\n\nBest regards,\n${name}`);
+      
+      window.location.href = `mailto:${targetEmail}?subject=${computedSubject}&body=${formattedBody}`;
+    });
+  }
 });

@@ -6,10 +6,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
   if (prefersDark) body.setAttribute('data-theme', 'dark');
 
-  themeToggle.addEventListener('click', () => {
-    const next = body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-    body.setAttribute('data-theme', next);
-  });
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      const next = body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      body.setAttribute('data-theme', next);
+    });
+  }
 
   /* 2. Animated snapshot counters */
   const counters = document.querySelectorAll('[data-count]');
@@ -92,12 +94,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* 7. Advanced Contact Form Submission Handler (Formspree Integration) */
   const contactForm = document.getElementById('contactForm');
-  const formStatus = document.getElementById('formStatus');
   const sendBtn = document.getElementById('sendEmailBtn');
 
   if (contactForm) {
     contactForm.addEventListener('submit', async (event) => {
       event.preventDefault(); // Stop native post redirect reload
+      
+      // FIX: Dynamically guarantee status element exists inside the current layout context
+      let formStatus = document.getElementById('formStatus');
+      if (!formStatus) {
+        formStatus = document.createElement('div');
+        formStatus.id = 'formStatus';
+        contactForm.appendChild(formStatus);
+      }
       
       const formData = new FormData(contactForm);
       
@@ -107,14 +116,12 @@ document.addEventListener('DOMContentLoaded', () => {
         sendBtn.textContent = 'Sending Message...';
       }
       
-      if (formStatus) {
-        formStatus.className = 'form-status-msg';
-        formStatus.style.display = 'none';
-      }
+      formStatus.className = 'form-status-msg';
+      formStatus.style.display = 'none';
 
       try {
-        const response = await fetch(contactForm.action, {
-          method: contactForm.method,
+        const response = await fetch(contactForm.action || '#', {
+          method: contactForm.method || 'POST',
           body: formData,
           headers: {
             'Accept': 'application/json'
@@ -126,26 +133,20 @@ document.addEventListener('DOMContentLoaded', () => {
           contactForm.reset();
           if (recruiterFields) recruiterFields.classList.remove('expanded');
           
-          if (formStatus) {
-            formStatus.textContent = 'Thank you! Your message has been sent successfully.';
-            formStatus.classList.add('success');
-          }
+          formStatus.textContent = 'Thank you! Your message has been sent successfully.';
+          formStatus.className = 'form-status-msg success';
         } else {
           // Failure Path data mapping response
           const responseData = await response.json();
-          if (formStatus) {
-            formStatus.textContent = responseData.errors 
-              ? responseData.errors.map(err => err.message).join(', ') 
-              : 'Oops! There was a problem submitting your form. Please try again.';
-            formStatus.classList.add('error');
-          }
+          formStatus.textContent = responseData.errors 
+            ? responseData.errors.map(err => err.message).join(', ') 
+            : 'Oops! There was a problem submitting your form. Please try again.';
+          formStatus.className = 'form-status-msg error';
         }
       } catch (error) {
         // Network connection error fallback
-        if (formStatus) {
-          formStatus.textContent = 'Network connection failed. Please check your internet line and retry.';
-          formStatus.classList.add('error');
-        }
+        formStatus.textContent = 'Network connection failed. Please check your internet line and retry.';
+        formStatus.className = 'form-status-msg error';
       } finally {
         // Restore controls functionality state
         if (sendBtn) {

@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-  /* 1. Theme toggle (persists for the session only) */
+  /* 1. Theme toggle */
   const themeToggle = document.getElementById('themeToggle');
   const body = document.body;
   const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -11,12 +11,12 @@ document.addEventListener('DOMContentLoaded', () => {
     body.setAttribute('data-theme', next);
   });
 
-  /* 2. Animated stat counters — trigger once, on first view of hero */
-  const counters = document.querySelectorAll('.stat-num');
+  /* 2. Animated snapshot counters */
+  const counters = document.querySelectorAll('[data-count]');
   const animateCounter = (el) => {
     const target = parseInt(el.getAttribute('data-count'), 10);
     const suffix = el.getAttribute('data-suffix') || '';
-    const duration = 1400;
+    const duration = 1300;
     const start = performance.now();
     const tick = (now) => {
       const progress = Math.min((now - start) / duration, 1);
@@ -33,11 +33,11 @@ document.addEventListener('DOMContentLoaded', () => {
         heroObserver.disconnect();
       }
     });
-  }, { threshold: 0.4 });
+  }, { threshold: 0.3 });
   const heroSection = document.getElementById('hero');
   if (heroSection) heroObserver.observe(heroSection);
 
-  /* 3. Scroll-reveal for each section */
+  /* 3. Scroll-reveal sections */
   const revealTargets = document.querySelectorAll('.section');
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -46,32 +46,28 @@ document.addEventListener('DOMContentLoaded', () => {
         revealObserver.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+  }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
   revealTargets.forEach(el => revealObserver.observe(el));
 
-  /* 4. Signal rail — highlight active section on scroll */
-  const railNodes = document.querySelectorAll('.rail-node');
-  const railMap = new Map();
-  railNodes.forEach(node => railMap.set(node.getAttribute('data-target'), node));
-
-  const railObserver = new IntersectionObserver((entries) => {
+  /* 4. Highlight active nav tab on scroll */
+  const navLinks = document.querySelectorAll('.topnav a');
+  const navMap = new Map();
+  navLinks.forEach(link => navMap.set(link.getAttribute('data-target'), link));
+  const navObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      const node = railMap.get(entry.target.id);
-      if (!node) return;
+      const link = navMap.get(entry.target.id);
+      if (!link) return;
       if (entry.isIntersecting) {
-        railNodes.forEach(n => n.classList.remove('active'));
-        node.classList.add('active');
+        navLinks.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
       }
     });
-  }, { threshold: 0.5, rootMargin: '-15% 0px -50% 0px' });
+  }, { threshold: 0.5, rootMargin: '-20% 0px -50% 0px' });
+  revealTargets.forEach(el => { if (navMap.has(el.id)) navObserver.observe(el); });
 
-  revealTargets.forEach(el => railObserver.observe(el));
-
-  /* 5. Back-to-top button */
+  /* 5. Back to top */
   const scrollTopBtn = document.getElementById('scrollTopBtn');
-  scrollTopBtn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
+  scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
   /* 6. Contact form -> mailto */
   const sendEmailBtn = document.getElementById('sendEmailBtn');
@@ -79,16 +75,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const name = document.getElementById('senderName').value.trim();
     const subject = document.getElementById('msgSubject').value.trim();
     const messageBody = document.getElementById('msgBody').value.trim();
-
     if (!name || !subject || !messageBody) {
       alert('Please fill in your name, subject, and message before sending.');
       return;
     }
-
     const targetEmail = 'KavikondalaManoj@gmail.com';
     const computedSubject = encodeURIComponent(`[Portfolio] ${subject}`);
     const formattedBody = encodeURIComponent(`Hi Manoj,\n\n${messageBody}\n\nBest regards,\n${name}`);
-
     window.location.href = `mailto:${targetEmail}?subject=${computedSubject}&body=${formattedBody}`;
   });
 });

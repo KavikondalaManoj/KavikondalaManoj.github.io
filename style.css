@@ -145,6 +145,10 @@ nav {
 }
 
 /* Fixed Sidebar Presentation Structure */
+.sidebar {
+  position: relative;
+}
+
 .sidebar-sticky-panel {
   position: sticky;
   top: 110px;
@@ -159,7 +163,7 @@ nav {
   transition: background 0.3s ease, border-color 0.3s ease;
 }
 
-/* True Circle Avatar Layout with Active Status Selection Integration */
+/* True Circle Avatar Layout with Active Status Integration */
 .profile-avatar-container {
   position: relative;
   width: 130px;
@@ -173,7 +177,7 @@ nav {
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid var(--border-element);
-  background: transparent; /* Smooth transparent scaling against varying layout backgrounds */
+  background: transparent;
 }
 
 .status-indicator {
@@ -252,7 +256,7 @@ nav {
 }
 
 .section-title {
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1.5px;
@@ -329,7 +333,7 @@ nav {
   color: var(--text-muted);
 }
 
-/* V-Cycle Professional Timeline Elements */
+/* Timeline Elements */
 .timeline-container {
   display: flex;
   flex-direction: column;
@@ -415,7 +419,7 @@ nav {
   box-shadow: var(--shadow-ambient);
 }
 
-/* Context Email Direct Widget Styles */
+/* Contact Module Styles */
 .connect-subtext {
   font-size: 13px;
   color: var(--text-muted);
@@ -480,7 +484,7 @@ footer {
     top: 0;
   }
   .nav-links {
-    display: none; /* Collapses text loops gracefully under space constraints */
+    display: none;
   }
   .project-matrix-layout {
     grid-template-columns: 1fr;

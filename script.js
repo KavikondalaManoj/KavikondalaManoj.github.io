@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 2. Theme Switching Logic Engine
+
+    // 1. Core Light/Dark Layout Theme Engine Integration
     const themeToggle = document.getElementById('themeToggle');
     const htmlElement = document.documentElement;
     const sunIcon = document.querySelector('.sun-icon');
@@ -18,28 +19,59 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // 1. Live Instant Portfolio Filtering Engine (Search)
-    const searchInput = document.getElementById('sectionSearch');
-    const sections = document.querySelectorAll('.filterable-section, #expertise, #courses');
+    // 2. Direct On-Page Search Content Filter Pipeline
+    const searchInput = document.getElementById('portfolioSearch');
+    const sections = document.querySelectorAll('.portfolio-section');
 
     searchInput.addEventListener('input', (e) => {
-        const query = e.target.value.toLowerCase().trim();
+        const filterQuery = e.target.value.toLowerCase().trim();
 
         sections.forEach(section => {
-            const sectionText = section.textContent.toLowerCase();
-            if (sectionText.includes(query)) {
-                section.style.display = '';
+            const innerContent = section.textContent.toLowerCase();
+            if (innerContent.includes(filterQuery)) {
+                section.style.display = 'block';
                 section.style.opacity = '1';
-                section.style.transform = 'scale(1)';
+                section.style.transform = 'translateY(0)';
             } else {
                 section.style.opacity = '0';
-                section.style.transform = 'scale(0.98)';
+                section.style.transform = 'translateY(4px)';
+                // Graceful layout transition collapse
                 setTimeout(() => {
-                    if(searchInput.value.toLowerCase().trim() !== "") {
+                    if (searchInput.value.trim() !== "") {
                         section.style.display = 'none';
                     }
                 }, 200);
             }
         });
+    });
+
+    // 3. Top Right Navigation Reset Button Action
+    const scrollTopBtn = document.getElementById('scrollTopBtn');
+    scrollTopBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
+    // 4. Contact Message Pipeline Interface Engine (Mailto Generation)
+    const sendEmailBtn = document.getElementById('sendEmailBtn');
+    sendEmailBtn.addEventListener('click', () => {
+        const name = document.getElementById('senderName').value.trim();
+        const subject = document.getElementById('msgSubject').value.trim();
+        const messageBody = document.getElementById('msgBody').value.trim();
+
+        if (!name || !subject || !messageBody) {
+            alert('Please fill out all the fields in the contact widget to dispatch your request.');
+            return;
+        }
+
+        const targetEmail = "KavikondalaManoj@gmail.com";
+        const computedSubject = encodeURIComponent(`[Portfolio Request] ${subject}`);
+        const formattedBody = encodeURIComponent(`Hi Manoj,\n\n${messageBody}\n\nBest regards,\n${name}`);
+
+        // Construct standard validation mail link matrix
+        window.location.href = `mailto:${targetEmail}?subject=${computedSubject}&body=${formattedBody}`;
     });
 });

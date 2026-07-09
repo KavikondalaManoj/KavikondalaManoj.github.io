@@ -267,4 +267,3 @@ button{font-family:inherit;}
 }
 .back-top:hover{border-color:var(--mint); color:var(--mint);}
 @media (max-width:600px){.back-top{position:static; margin-top:14px;}}
-

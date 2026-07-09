@@ -7,7 +7,7 @@
 <meta name="description" content="Manoj Kavikondala — Senior Technical Lead specializing in Automotive OTA Validation, HIL Commissioning, and Embedded Software Testing across global OEM and Tier-1 programs.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght=500;600;700&family=Inter:wght=400;500;600;700&family=JetBrains+Mono:wght=400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body data-theme="light">
@@ -33,11 +33,9 @@
 
   <main id="top">
 
-    <!-- HERO BAND -->
     <section class="hero-band" id="hero">
       <div class="hero-grid">
 
-        <!-- Profile card -->
         <div class="card profile-card">
           <div class="avatar-frame">
             <img src="assets/images/manoj.png" alt="Manoj Kavikondala" class="avatar-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
@@ -63,7 +61,6 @@
           <a href="assets/resume/Manoj_Kavikondala_Sr_Technical_Lead.pdf" download class="btn btn-primary btn-full">Download CV</a>
         </div>
 
-        <!-- Summary card -->
         <div class="card summary-card">
           <p class="card-eyebrow">📋 Professional Summary</p>
           <p class="summary-text">
@@ -99,169 +96,183 @@
       </div>
     </section>
 
-    <!-- ABOUT -->
     <section class="section section-narrow" id="about">
-      <p class="section-eyebrow">🔧 My Approach</p>
-      <h2 class="section-title">About</h2>
-      <p class="about-text">
-        Based in Japan and supporting Honda R&amp;D, I lead OTA and SOTA/FOTA validation programs, commission
-        HIL test benches on dSPACE Scalexio, and write the Python automation that turns thousands of raw test
-        cycles into decisions engineers can act on.
-      </p>
-      <p class="about-text">
-        Along the way I've validated braking and chassis control, HVAC ECUs, exterior lighting, power tailgates,
-        and EPS systems for OEMs including BMW, Ford, Opel, and Bentley — always with one question in mind: what
-        happens if this fails on the road, and how do we prove in advance that it won't.
-      </p>
+      <div class="section-inner">
+        <svg class="car-watermark watermark-sedan" viewBox="0 0 100 35" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M5 24h6s2-7 9-7h38c4 0 6 4 9 7h28v4H5zM23 24a4 4 0 1 0 0 8 4 4 0 0 0 0-8zm54 0a4 4 0 1 0 0 8 4 4 0 0 0 0-8z" />
+        </svg>
+        <p class="section-eyebrow">🔧 My Approach</p>
+        <h2 class="section-title">About</h2>
+        <p class="about-text">
+          Based in Japan and supporting Honda R&amp;D, I lead OTA and SOTA/FOTA validation programs, commission
+          HIL test benches on dSPACE Scalexio, and write the Python automation that turns thousands of raw test
+          cycles into decisions engineers can act on.
+        </p>
+        <p class="about-text">
+          Along the way I've validated braking and chassis control, HVAC ECUs, exterior lighting, power tailgates,
+          and EPS systems for OEMs including BMW, Ford, Opel, and Bentley — always with one question in mind: what
+          happens if this fails on the road, and how do we prove in advance that it won't.
+        </p>
+      </div>
     </section>
 
-    <!-- CORE EXPERTISE -->
     <section class="section" id="expertise">
-      <h2 class="section-title center">Core Expertise</h2>
-      <div class="expertise-grid">
-        <div class="card expertise-card">
-          <span class="expertise-code">OTA</span>
-          <h3>OTA &amp; SOTA/FOTA Validation</h3>
-          <p>End-to-end sign-off of software and firmware updates delivered over the air, including rollback,
-             interruption, and fleet-scale regression scenarios.</p>
+      <div class="section-inner">
+        <svg class="car-watermark watermark-suv" viewBox="0 0 100 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M5 28h8s3-10 10-10h42c5 0 8 6 11 10h19v5H5zM26 28a4.5 4.5 0 1 0 0 9 4.5 4.5 0 0 0 0-9zm50 0a4.5 4.5 0 1 0 0 9 4.5 4.5 0 0 0 0-9z" />
+        </svg>
+        <h2 class="section-title center">Core Expertise</h2>
+        <div class="expertise-grid">
+          <div class="card expertise-card">
+            <span class="expertise-code">OTA</span>
+            <h3>OTA &amp; SOTA/FOTA Validation</h3>
+            <p>End-to-end sign-off of software and firmware updates delivered over the air, including rollback,
+               interruption, and fleet-scale regression scenarios.</p>
+          </div>
+          <div class="card expertise-card">
+            <span class="expertise-code">HIL</span>
+            <h3>HIL Commissioning</h3>
+            <p>Building and commissioning Hardware-in-the-Loop rigs on dSPACE Scalexio for braking, chassis, and
+               body-control validation.</p>
+          </div>
+          <div class="card expertise-card">
+            <span class="expertise-code">UDS</span>
+            <h3>Diagnostics Verification</h3>
+            <p>UDS/diagnostic session testing, DTC verification, and ECU communication validation across CAN and
+               Automotive Ethernet networks.</p>
+          </div>
+          <div class="card expertise-card">
+            <span class="expertise-code">ADAS</span>
+            <h3>Active Safety Systems</h3>
+            <p>Validation of active safety and driver-assistance functions, from sensor-in-the-loop setups through
+               closed-loop scenario testing.</p>
+          </div>
+          <div class="card expertise-card">
+            <span class="expertise-code">REQ</span>
+            <h3>Requirements Traceability</h3>
+            <p>ASPICE-aligned requirements engineering with full traceability from spec through test case to
+               release evidence.</p>
+          </div>
+          <div class="card expertise-card">
+            <span class="expertise-code">AUTO</span>
+            <h3>Automation Frameworks</h3>
+            <p>Python-built pipelines that cut manual validation effort and compress reporting cycles from hours
+               to minutes.</p>
+          </div>
         </div>
-        <div class="card expertise-card">
-          <span class="expertise-code">HIL</span>
-          <h3>HIL Commissioning</h3>
-          <p>Building and commissioning Hardware-in-the-Loop rigs on dSPACE Scalexio for braking, chassis, and
-             body-control validation.</p>
-        </div>
-        <div class="card expertise-card">
-          <span class="expertise-code">UDS</span>
-          <h3>Diagnostics Verification</h3>
-          <p>UDS/diagnostic session testing, DTC verification, and ECU communication validation across CAN and
-             Automotive Ethernet networks.</p>
-        </div>
-        <div class="card expertise-card">
-          <span class="expertise-code">ADAS</span>
-          <h3>Active Safety Systems</h3>
-          <p>Validation of active safety and driver-assistance functions, from sensor-in-the-loop setups through
-             closed-loop scenario testing.</p>
-        </div>
-        <div class="card expertise-card">
-          <span class="expertise-code">REQ</span>
-          <h3>Requirements Traceability</h3>
-          <p>ASPICE-aligned requirements engineering with full traceability from spec through test case to
-             release evidence.</p>
-        </div>
-        <div class="card expertise-card">
-          <span class="expertise-code">AUTO</span>
-          <h3>Automation Frameworks</h3>
-          <p>Python-built pipelines that cut manual validation effort and compress reporting cycles from hours
-             to minutes.</p>
-        </div>
-      </div>
 
-      <div class="skills-block">
-        <p class="section-eyebrow center">🧰 Technical Skills</p>
-        <div class="chip-groups">
-          <div class="chip-group"><h4>Test &amp; Simulation</h4><div class="chip-row"><span class="chip">dSPACE Scalexio</span><span class="chip">AutomationDesk</span><span class="chip">ModelDesk</span><span class="chip">CANoe</span><span class="chip">CANape</span></div></div>
-          <div class="chip-group"><h4>Protocols &amp; Networks</h4><div class="chip-row"><span class="chip">CAN / CAPL</span><span class="chip">UDS</span><span class="chip">Automotive Ethernet</span><span class="chip">SOTA / FOTA</span></div></div>
-          <div class="chip-group"><h4>Automation &amp; Dev</h4><div class="chip-row"><span class="chip">Python</span><span class="chip">CI/CD Validation</span><span class="chip">PyQt6</span><span class="chip">Git</span></div></div>
-          <div class="chip-group"><h4>Process &amp; Quality</h4><div class="chip-row"><span class="chip">ASPICE</span><span class="chip">Requirements Traceability</span><span class="chip">ISTQB Practices</span><span class="chip">Lean Six Sigma</span></div></div>
+        <div class="skills-block">
+          <p class="section-eyebrow center">🧰 Technical Skills</p>
+          <div class="chip-groups">
+            <div class="chip-group"><h4>Test &amp; Simulation</h4><div class="chip-row"><span class="chip">dSPACE Scalexio</span><span class="chip">AutomationDesk</span><span class="chip">ModelDesk</span><span class="chip">CANoe</span><span class="chip">CANape</span></div></div>
+            <div class="chip-group"><h4>Protocols &amp; Networks</h4><div class="chip-row"><span class="chip">CAN / CAPL</span><span class="chip">UDS</span><span class="chip">Automotive Ethernet</span><span class="chip">SOTA / FOTA</span></div></div>
+            <div class="chip-group"><h4>Automation &amp; Dev</h4><div class="chip-row"><span class="chip">Python</span><span class="chip">CI/CD Validation</span><span class="chip">PyQt6</span><span class="chip">Git</span></div></div>
+            <div class="chip-group"><h4>Process &amp; Quality</h4><div class="chip-row"><span class="chip">ASPICE</span><span class="chip">Requirements Traceability</span><span class="chip">ISTQB Practices</span><span class="chip">Lean Six Sigma</span></div></div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- EXPERIENCE (publication-list style) -->
     <section class="section" id="experience">
-      <h2 class="section-title center">Professional Experience</h2>
-      <ul class="exp-list">
-        <li class="exp-row">
-          <div class="exp-main">
-            <span class="exp-title">Senior Technical Lead <span class="exp-current">Current</span></span>
-            <span class="exp-company">Honda R&amp;D Japan</span>
-            <p class="exp-desc">Leading OTA validation programs, automation initiatives, requirements-driven
-               testing, and reporting automation for connected vehicle platforms.</p>
-          </div>
-        </li>
-        <li class="exp-row">
-          <div class="exp-main">
-            <span class="exp-title">Technical Lead — HIL &amp; Active Safety</span>
-            <span class="exp-company">ZF</span>
-            <p class="exp-desc">Delivered HIL validation environments for braking and chassis control functions
-               using dSPACE Scalexio and ModelDesk.</p>
-          </div>
-        </li>
-        <li class="exp-row">
-          <div class="exp-main">
-            <span class="exp-title">Test Coordinator</span>
-            <span class="exp-company">Brose</span>
-            <p class="exp-desc">Managed validation activities for Power Operated Tailgate and Electronic Power
-               Window systems.</p>
-          </div>
-        </li>
-        <li class="exp-row">
-          <div class="exp-main">
-            <span class="exp-title">Senior Test Manager</span>
-            <span class="exp-company">Nexteer</span>
-            <p class="exp-desc">Led EPS validation programs and automated regression testing through dSPACE
-               toolchain integration.</p>
-          </div>
-        </li>
-        <li class="exp-row">
-          <div class="exp-main">
-            <span class="exp-title">Verification &amp; Diagnostics Engineer</span>
-            <span class="exp-company">BHTC Germany</span>
-            <p class="exp-desc">Executed HVAC ECU validation programs for BMW, Opel, and Bentley platforms.</p>
-          </div>
-        </li>
-        <li class="exp-row">
-          <div class="exp-main">
-            <span class="exp-title">Software Verification Engineer</span>
-            <span class="exp-company">Ford Programs</span>
-            <p class="exp-desc">Validated exterior lighting systems and developed reusable automation libraries.</p>
-          </div>
-        </li>
-      </ul>
+      <div class="section-inner">
+        <svg class="car-watermark watermark-sports" viewBox="0 0 100 30" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M5 21h5s2-6 8-6h48c3 0 5 3 7 6h22v4H5zM20 21a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm58 0a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7z" />
+        </svg>
+        <h2 class="section-title center">Professional Experience</h2>
+        <ul class="exp-list">
+          <li class="exp-row">
+            <div class="exp-main">
+              <span class="exp-title">Senior Technical Lead <span class="exp-current">Current</span></span>
+              <span class="exp-company">Honda R&amp;D Japan</span>
+              <p class="exp-desc">Leading OTA validation programs, automation initiatives, requirements-driven
+                 testing, and reporting automation for connected vehicle platforms.</p>
+            </div>
+          </li>
+          <li class="exp-row">
+            <div class="exp-main">
+              <span class="exp-title">Technical Lead — HIL &amp; Active Safety</span>
+              <span class="exp-company">ZF</span>
+              <p class="exp-desc">Delivered HIL validation environments for braking and chassis control functions
+                 using dSPACE Scalexio and ModelDesk.</p>
+            </div>
+          </li>
+          <li class="exp-row">
+            <div class="exp-main">
+              <span class="exp-title">Test Coordinator</span>
+              <span class="exp-company">Brose</span>
+              <p class="exp-desc">Managed validation activities for Power Operated Tailgate and Electronic Power
+                 Window systems.</p>
+            </div>
+          </li>
+          <li class="exp-row">
+            <div class="exp-main">
+              <span class="exp-title">Senior Test Manager</span>
+              <span class="exp-company">Nexteer</span>
+              <p class="exp-desc">Led EPS validation programs and automated regression testing through dSPACE
+                 toolchain integration.</p>
+            </div>
+          </li>
+          <li class="exp-row">
+            <div class="exp-main">
+              <span class="exp-title">Verification &amp; Diagnostics Engineer</span>
+              <span class="exp-company">BHTC Germany</span>
+              <p class="exp-desc">Executed HVAC ECU validation programs for BMW, Opel, and Bentley platforms.</p>
+            </div>
+          </li>
+          <li class="exp-row">
+            <div class="exp-main">
+              <span class="exp-title">Software Verification Engineer</span>
+              <span class="exp-company">Ford Programs</span>
+              <p class="exp-desc">Validated exterior lighting systems and developed reusable automation libraries.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
     </section>
 
-    <!-- PROJECTS -->
     <section class="section" id="projects">
-      <h2 class="section-title center">Featured Projects</h2>
-      <div class="project-grid">
-        <div class="card project-card">
-          <div class="project-banner banner-1"><span>tool</span></div>
-          <h3>Report Generating Tool</h3>
-          <p>Automated engineering report generation platform reducing manual analysis effort and accelerating
-             stakeholder reporting.</p>
-        </div>
-        <div class="card project-card">
-          <div class="project-banner banner-2"><span>pipeline</span></div>
-          <h3>ARG — Automated Report Generation</h3>
-          <p>Framework for automated extraction, aggregation, and reporting of automotive validation results.</p>
-        </div>
-        <div class="card project-card">
-          <div class="project-banner banner-3"><span>PyQt6</span></div>
-          <h3>DriveWidget</h3>
-          <p>Desktop application for monitoring local and network drives with real-time storage visibility.</p>
-        </div>
-        <div class="card project-card">
-          <div class="project-banner banner-4"><span>utility</span></div>
-          <h3>PDF Tools</h3>
-          <p>Collection of PDF automation utilities for engineering documentation workflows.</p>
-        </div>
-        <div class="card project-card">
-          <div class="project-banner banner-5"><span>parser</span></div>
-          <h3>BLF Time Extractor</h3>
-          <p>Automotive engineering utility for extracting and analyzing timestamps from BLF log files.</p>
-        </div>
-        <div class="card project-card">
-          <div class="project-banner banner-6"><span>desktop</span></div>
-          <h3>Quick Launcher Panel</h3>
-          <p>Streamlines access to commonly used engineering applications from a single panel.</p>
+      <div class="section-inner">
+        <svg class="car-watermark watermark-hatch" viewBox="0 0 100 35" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M5 24h12s3-8 9-8h32c4 0 5 4 7 8h30v4H5zM26 24a4 4 0 1 0 0 8 4 4 0 0 0 0-8zm52 0a4 4 0 1 0 0 8 4 4 0 0 0 0-8z" />
+        </svg>
+        <h2 class="section-title center">Featured Projects</h2>
+        <div class="project-grid">
+          <div class="card project-card">
+            <div class="project-banner banner-1"><span>tool</span></div>
+            <h3>Report Generating Tool</h3>
+            <p>Automated engineering report generation platform reducing manual analysis effort and accelerating
+               stakeholder reporting.</p>
+          </div>
+          <div class="card project-card">
+            <div class="project-banner banner-2"><span>pipeline</span></div>
+            <h3>ARG — Automated Report Generation</h3>
+            <p>Framework for automated extraction, aggregation, and reporting of automotive validation results.</p>
+          </div>
+          <div class="card project-card">
+            <div class="project-banner banner-3"><span>PyQt6</span></div>
+            <h3>DriveWidget</h3>
+            <p>Desktop application for monitoring local and network drives with real-time storage visibility.</p>
+          </div>
+          <div class="card project-card">
+            <div class="project-banner banner-4"><span>utility</span></div>
+            <h3>PDF Tools</h3>
+            <p>Collection of PDF automation utilities for engineering documentation workflows.</p>
+          </div>
+          <div class="card project-card">
+            <div class="project-banner banner-5"><span>parser</span></div>
+            <h3>BLF Time Extractor</h3>
+            <p>Automotive engineering utility for extracting and analyzing timestamps from BLF log files.</p>
+          </div>
+          <div class="card project-card">
+            <div class="project-banner banner-6"><span>desktop</span></div>
+            <h3>Quick Launcher Panel</h3>
+            <p>Streamlines access to commonly used engineering applications from a single panel.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- ACHIEVEMENTS -->
     <section class="section" id="achievements">
-      <h2 class="section-title center">Key Achievements</h2>
       <div class="achv-grid">
         <div class="card achv-card"><span class="achv-num">70%</span><p>Reduction in manual validation effort through custom Python automation frameworks.</p></div>
         <div class="card achv-card"><span class="achv-num">1000+</span><p>OTA test cycles reviewed daily across connected-vehicle release trains.</p></div>
@@ -270,7 +281,6 @@
       </div>
     </section>
 
-    <!-- CERTIFICATIONS -->
     <section class="section" id="certifications">
       <h2 class="section-title center">Certifications</h2>
       <div class="badge-cloud">
@@ -283,24 +293,64 @@
       </div>
     </section>
 
-    <!-- CTA BAND -->
     <section class="cta-band">
       <h2>Let's ship the next release together 🚗</h2>
       <p>Open to conversations on OTA validation, HIL programs, and automation leadership roles.</p>
       <a href="#contact" class="btn btn-cta">Get in Touch</a>
     </section>
 
-    <!-- CONTACT -->
     <section class="section" id="contact">
       <h2 class="section-title center">Contact</h2>
       <div class="contact-grid">
-        <form class="card contact-form" id="contactForm">
+        <form action="https://formspree.io/f/xoqzpevb" method="POST" class="card contact-form" id="contactForm">
           <div class="form-row">
-            <input type="text" id="senderName" placeholder="Your name" required>
-            <input type="text" id="msgSubject" placeholder="Subject" required>
+            <div class="form-group">
+              <input type="text" name="name" id="senderName" placeholder="Your name" required>
+            </div>
+            <div class="form-group">
+              <input type="email" name="_replyto" id="senderEmail" placeholder="Your email address" required>
+            </div>
           </div>
-          <textarea id="msgBody" rows="5" placeholder="Message" required></textarea>
-          <button type="button" class="btn btn-primary" id="sendEmailBtn">Send Message</button>
+          
+          <div class="form-row">
+            <div class="form-group full-width">
+              <input type="text" name="_subject" id="msgSubject" placeholder="Subject" required>
+            </div>
+          </div>
+
+          <div class="recruiter-toggle-container">
+            <label class="toggle-label">
+              <input type="checkbox" id="recruiterToggle" name="is_recruiter" value="Yes">
+              <span class="toggle-custom-box"></span>
+              I am a recruiter / hiring manager
+            </label>
+          </div>
+
+          <div class="recruiter-fields" id="recruiterFields">
+            <div class="form-row">
+              <div class="form-group">
+                <input type="text" name="company" id="recruiterCompany" placeholder="Company / Agency Name">
+              </div>
+              <div class="form-group">
+                <select name="opportunity_type" id="opportunityType">
+                  <option value="" disabled selected>Select Opportunity Type</option>
+                  <option value="Permanent / Full-Time">Permanent / Full-Time</option>
+                  <option value="Contract / Consulting">Contract / Consulting</option>
+                  <option value="Executive Search">Executive Search</option>
+                  <option value="Other">Other Engagement</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <textarea name="message" id="msgBody" rows="5" placeholder="Your message details..." required></textarea>
+          </div>
+
+          <input type="text" name="_gotcha" style="display:none">
+
+          <button type="submit" class="btn btn-primary" id="sendEmailBtn">Send Message</button>
+          <div id="formStatus" class="form-status-msg"></div>
         </form>
 
         <div class="card contact-card">

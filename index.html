@@ -1,226 +1,192 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Manoj Kavikondala | Senior Technical Lead</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <nav>
-  <a href="#" class="logo-btn" id="scrollTopBtn">Manoj Kavikondala</a>
-  
-  <div class="nav-right">
-    <ul class="nav-links">
-      <li><a href="#summary">Summary</a></li>
-      <li><a href="#competencies">Competencies</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#certifications">Certifications</a></li>
-      <li><a href="#connect">Contact</a></li>
-    </ul>
-
-    <div class="search-container">
-      <input type="text" id="portfolioSearch" placeholder="Search portfolio...">
-    </div>
-
-    <button id="themeToggle" class="theme-btn" aria-label="Toggle Layout Theme">
-      <svg class="sun-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-      <svg class="moon-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" style="display:none;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-    </button>
-  </div>
+  <div class="logo">MK</div>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#expertise">Expertise</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
 </nav>
 
-<div class="portfolio-container">
-  
-  <aside class="sidebar">
-    <div class="sidebar-sticky-panel">
-      <div class="profile-avatar-container">
-        <img src="manoj.png" alt="Manoj Kavikondala" class="profile-avatar">
-        <span class="status-indicator" title="Available / Active"></span>
-      </div>
-      
-      <h1 class="sidebar-name">Manoj Kavikondala</h1>
-      <p class="sidebar-title">Senior Technical Lead</p>
-      <p class="sidebar-meta">📍 Utsunomiya, Japan</p>
-      <p class="sidebar-lang">🗣️ English • 日本語 (Elementary)</p>
-      
-      <div class="social-channels">
-        <a href="https://www.linkedin.com/in/kavikondala-manoj" target="_blank" aria-label="LinkedIn Account">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-        </a>
-        <a href="https://github.com/KavikondalaManoj" target="_blank" aria-label="GitHub Repository">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-        </a>
-      </div>
+<section class="hero">
+  <img src="Manoj_Image.png" alt="Manoj Kavikondala" class="profile">
 
-      <a href="Manoj_Kavikondala_Sr_Technical_Lead.pdf" download class="sidebar-cv-btn">Download Resume</a>
+  <div class="hero-right">
+    <h1>Manoj Kavikondala</h1>
+    <h2>Senior Technical Lead</h2>
+
+    <p class="summary">
+      Automotive Embedded Software Testing and Validation professional with over 12 years of experience delivering software quality across global OEM and Tier‑1 programs.
+    </p>
+
+    <div class="company-strip">
+      <span class="company">Honda R&D</span>
+      <span class="company">BMW</span>
+      <span class="company">ZF</span>
+      <span class="company">Nexteer</span>
+      <span class="company">Ford</span>
+      <span class="company">Brose</span>
     </div>
-  </aside>
 
-  <main class="content-stream">
+    <div class="stats">
+      <div class="stat"><span>12+</span><p>Years Experience</p></div>
+      <div class="stat"><span>1000+</span><p>OTA Cycles Daily</p></div>
+      <div class="stat"><span>70%</span><p>Manual Effort Reduced</p></div>
+      <div class="stat"><span>4h→45m</span><p>Report Generation</p></div>
+    </div>
+
+    <div class="buttons">
+      <a href="Manoj_Kavikondala_Sr_Technical_Lead.pdf" download>Download Resume</a>
+      <a href="https://github.com/KavikondalaManoj" target="_blank" style="background:#4b5563;">GitHub</a>
+      <a href="https://www.linkedin.com/in/kavikondala-manoj" target="_blank" style="background:#1d4ed8;">LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <h2 class="section-title">About Me</h2>
+  <p style="font-size: 16px; color: var(--muted); max-width: 900px;">
+    Automotive Embedded Software Testing and Validation professional with over 12 years of experience delivering software quality across global OEM and Tier‑1 programs. Specialized in OTA validation, HIL commissioning, diagnostics verification, active safety systems, requirements engineering, and Python automation frameworks. Currently supporting Honda R&D Japan and leading initiatives that improve testing efficiency, automation coverage, and release confidence.
+  </p>
+</section>
+
+<section id="expertise">
+  <h2 class="section-title">Core Expertise</h2>
+  <div class="tiles">
+    <div class="tile">OTA Validation</div>
+    <div class="tile">SOTA / FOTA</div>
+    <div class="tile">HIL Testing & Commissioning</div>
+    <div class="tile">Active Safety Systems</div>
+    <div class="tile">UDS Diagnostics</div>
+    <div class="tile">ASPICE</div>
+    <div class="tile">Python Automation</div>
+    <div class="tile">CI/CD Validation</div>
+    <div class="tile">CANoe</div>
+    <div class="tile">CANape</div>
+    <div class="tile">dSPACE Scalexio</div>
+    <div class="tile">AutomationDesk</div>
+  </div>
+</section>
+
+<section>
+  <h2 class="section-title">Key Achievements</h2>
+  <div class="tiles">
+    <div class="tile" style="color: var(--primary);">70% Reduction in Manual Validation Effort</div>
+    <div class="tile" style="color: var(--primary);">1000+ OTA Test Cycles Reviewed Daily</div>
+    <div class="tile" style="color: var(--primary);">Reporting Time Reduced from 4 Hours to 45 Minutes</div>
+    <div class="tile" style="color: var(--primary);">Delivered Multiple OEM Programs Across Global Platforms</div>
+  </div>
+</section>
+
+<section id="experience">
+  <h2 class="section-title">Professional Experience</h2>
+  <div class="timeline">
     
-    <section id="summary" class="portfolio-section">
-      <h2 class="section-title">📊 Executive Summary</h2>
-      <div class="glossy-card summary-card">
-        <p class="summary-lead">Automotive embedded software testing authority with 12+ years of end-to-end V-cycle expertise, spanning HIL commissioning, OTA validation, and safety-critical system verification for Tier-1 OEMs.</p>
-        
-        <div class="metrics-dashboard">
-          <div class="metric-block">
-            <h3>12+</h3>
-            <p>Years V-Cycle Seniority</p>
-          </div>
-          <div class="metric-block">
-            <h3>1,000+</h3>
-            <p>Daily OTA Cycles Managed</p>
-          </div>
-          <div class="metric-block">
-            <h3>70%</h3>
-            <p>Manual Task Reductions</p>
-          </div>
-          <div class="metric-block">
-            <h3>Under 45m</h3>
-            <p>Report Generation Build</p>
-          </div>
-        </div>
-      </div>
-    </section>
+    <div class="timeline-card">
+      <h3>Honda R&D Japan | Senior Technical Lead</h3>
+      <p style="margin-top:5px; color:var(--muted);">Leading OTA validation programs, automation initiatives, requirements‑driven testing and reporting automation for connected vehicle platforms.</p>
+    </div>
 
-    <section id="competencies" class="portfolio-section">
-      <h2 class="section-title">🛠️ Core Competencies</h2>
-      <div class="competency-matrix-grid">
-        <div class="glossy-card competency-box">
-          <h4>HIL Testing & Commissioning</h4>
-          <p>dSPACE Scalexio, ControlDesk, Automation Desk, ModelDesk, Synect, test architecture development, multi-module verification.</p>
-        </div>
-        <div class="glossy-card competency-box">
-          <h4>Vector Tools Ecosystem</h4>
-          <p>CANoe, CANape, Vector VT System, functional diagnostics, CAN/LIN/Automotive Ethernet protocol stream analysis.</p>
-        </div>
-        <div class="glossy-card competency-box">
-          <h4>OTA Systems Validation</h4>
-          <p>Over-the-Air Update Architectures, SOTA, FOTA infrastructure control, UDS Diagnostics, hardware-software embedded integration.</p>
-        </div>
-        <div class="glossy-card competency-box">
-          <h4>Requirements & ASPICE</h4>
-          <p>IBM DOORS (Classic/DNG), BEE CodeBeamer, Rational Change, bidirectional requirement-to-test mapping matrices.</p>
-        </div>
-      </div>
-    </section>
+    <div class="timeline-card">
+      <h3>ZF | Technical Lead – HIL & Active Safety</h3>
+      <p style="margin-top:5px; color:var(--muted);">Delivered HIL validation environments for braking and chassis control functions using dSPACE Scalexio and ModelDesk.</p>
+    </div>
 
-    <section id="experience" class="portfolio-section">
-      <h2 class="section-title">💼 Professional Experience</h2>
-      <div class="timeline-container">
-        
-        <div class="timeline-node glossy-card">
-          <div class="node-header">
-            <div>
-              <h3>Sr. Test Leader</h3>
-              <span class="company-tag">KPIT Technologies (Client: Honda R&D)</span>
-            </div>
-            <span class="node-duration">Oct 2023 - Present</span>
-          </div>
-          <ul class="node-bullet-points">
-            <li>Managed end-to-end OTA update testing for Honda R&D, reviewing 1,000+ test cycles daily, reducing defect escape metrics by 40%.</li>
-            <li>Built a Python-based data pipeline integrating Vector VT and KPIT KITE, automating 70% of validation loops and cutting report latency from 4 hours to under 45 minutes.</li>
-            <li>Designed reusable test framework libraries supporting requirements-driven test specification models and continuous regression arrays.</li>
-          </ul>
-        </div>
+    <div class="timeline-card">
+      <h3>Brose | Test Coordinator</h3>
+      <p style="margin-top:5px; color:var(--muted);">Managed validation activities for Power Operated Tailgate and Electronic Power Window systems.</p>
+    </div>
 
-        <div class="timeline-node glossy-card">
-          <div class="node-header">
-            <div>
-              <h3>Technical Lead - HIL & Active Safety</h3>
-              <span class="company-tag">BlueBinaries Engineering (Client: ZF TCI)</span>
-            </div>
-            <span class="node-duration">Nov 2022 - Oct 2023</span>
-          </div>
-          <ul class="node-bullet-points">
-            <li>Led HIL bench setup using dSPACE Scalexio, integrating 25 braking and chassis features (ABS, YSC, TC) 2 weeks ahead of target schedules.</li>
-            <li>Built vehicle dynamics simulation models in dSPACE ModelDesk and automated braking test configurations via ControlDesk.</li>
-          </ul>
-        </div>
+    <div class="timeline-card">
+      <h3>Nexteer | Senior Test Manager</h3>
+      <p style="margin-top:5px; color:var(--muted);">Led EPS validation programs and automated regression testing through dSPACE toolchain integration.</p>
+    </div>
 
-        <div class="timeline-node glossy-card">
-          <div class="node-header">
-            <div>
-              <h3>Test Coordinator - Body Electronics</h3>
-              <span class="company-tag">Hinduja Tech Limited (Client: Brose India)</span>
-            </div>
-            <span class="node-duration">Jul 2021 - Nov 2022</span>
-          </div>
-          <ul class="node-bullet-points">
-            <li>Engineered clear test specifications within DOORS Classic and BEE CodeBeamer for Power-Operated Tailgate (POT) and Electronic Power Window systems.</li>
-          </ul>
-        </div>
+    <div class="timeline-card">
+      <h3>BHTC Germany | Verification & Diagnostics Engineer</h3>
+      <p style="margin-top:5px; color:var(--muted);">Executed HVAC ECU validation programs for BMW, Opel and Bentley platforms.</p>
+    </div>
 
-        <div class="timeline-node glossy-card">
-          <div class="node-header">
-            <div>
-              <h3>Sr. Test Manager - EPS Systems</h3>
-              <span class="company-tag">BlueBinaries Engineering (Client: Nexteer Automotive)</span>
-            </div>
-            <span class="node-duration">Jun 2020 - Mar 2021</span>
-          </div>
-          <ul class="node-bullet-points">
-            <li>Executed HIL validation campaigns using dSPACE AutomationDesk, establishing bidirectional traceability loops across 200+ functional conditions.</li>
-          </ul>
-        </div>
+    <div class="timeline-card">
+      <h3>Ford Programs | Software Verification Engineer</h3>
+      <p style="margin-top:5px; color:var(--muted);">Validated exterior lighting systems and developed reusable automation libraries.</p>
+    </div>
 
-      </div>
-    </section>
+  </div>
+</section>
 
-    <section id="projects" class="portfolio-section">
-      <h2 class="section-title">💻 Featured Engineering Projects</h2>
-      <div class="project-matrix-layout">
-        <div class="glossy-card project-tile">
-          <h3>Report Generating Tool / ARG</h3>
-          <p>Automated engineering report generation platform reducing manual analysis effort and accelerating stakeholder reporting.</p>
-        </div>
-        <div class="glossy-card project-tile">
-          <h3>DriveWidget Pro</h3>
-          <p>PyQt6 desktop application for monitoring local and network drives with real‑time storage visibility.</p>
-        </div>
-        <div class="glossy-card project-tile">
-          <h3>BLF Time Extractor</h3>
-          <p>Automotive engineering utility for extracting and analyzing timestamps from BLF log files.</p>
-        </div>
-      </div>
-    </section>
+<section id="projects">
+  <h2 class="section-title">Featured Projects</h2>
+  <div class="project-grid">
 
-    <section id="certifications" class="portfolio-section">
-      <h2 class="section-title">📜 Certifications</h2>
-      <div class="badge-flex-cloud">
-        <span class="glossy-badge">ISTQB® Certified Tester Foundation Level (CTFL)</span>
-        <span class="glossy-badge">Scrum Master Certified (SMC) — PMI</span>
-        <span class="glossy-badge">Lean Six Sigma Foundations — PMI</span>
-        <span class="glossy-badge">Automotive Over-the-Air Update (OTA)</span>
-        <span class="glossy-badge">Generative AI & Agentic AI Practitioner — KPIT Academy</span>
-      </div>
-    </section>
+    <div class="project-card">
+      <h3>Report Generating Tool</h3>
+      <p style="margin-top:10px; color:var(--muted); font-size:14px;">Automated engineering report generation platform reducing manual analysis effort and accelerating stakeholder reporting.</p>
+    </div>
 
-    <section id="connect" class="portfolio-section">
-      <h2 class="section-title">✉️ Connect with Me</h2>
-      <div class="glossy-card connect-form-wrapper">
-        <p class="connect-subtext">Drop a project query or validation request below to sync instantly over email.</p>
-        <div class="form-group-row">
-          <input type="text" id="senderName" placeholder="Your Name" required>
-          <input type="text" id="msgSubject" placeholder="Project Subject" required>
-        </div>
-        <textarea id="msgBody" rows="5" placeholder="Enter your project requirements or request details here..." required></textarea>
-        <button id="sendEmailBtn" class="form-submit-btn">Send Message Request</button>
-      </div>
-    </section>
+    <div class="project-card">
+      <h3>ARG Automated Report</h3>
+      <p style="margin-top:10px; color:var(--muted); font-size:14px;">Framework for automated extraction, aggregation and reporting of automotive validation results.</p>
+    </div>
 
-    <footer>
-      © 2026 Manoj Kavikondala | Senior Technical Lead • Embedded Software Validation Architect
-    </footer>
-  </main>
-</div>
+    <div class="project-card">
+      <h3>DriveWidget</h3>
+      <p style="margin-top:10px; color:var(--muted); font-size:14px;">PyQt6 desktop application for monitoring local and network drives with real‑time storage visibility.</p>
+    </div>
+
+    <div class="project-card">
+      <h3>PDF Tools</h3>
+      <p style="margin-top:10px; color:var(--muted); font-size:14px;">Collection of PDF automation utilities for engineering documentation workflows.</p>
+    </div>
+
+    <div class="project-card">
+      <h3>BLF Time Extractor</h3>
+      <p style="margin-top:10px; color:var(--muted); font-size:14px;">Automotive engineering utility for extracting and analyzing timestamps from BLF log files.</p>
+    </div>
+
+    <div class="project-card">
+      <h3>Quick Launcher Panel</h3>
+      <p style="margin-top:10px; color:var(--muted); font-size:14px;">Productivity tool designed to streamline access to commonly used engineering applications.</p>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <h2 class="section-title">Certifications</h2>
+  <div class="tiles">
+    <div class="tile">ISTQB CTFL</div>
+    <div class="tile">Scrum Master</div>
+    <div class="tile">Lean Six Sigma</div>
+    <div class="tile">Automotive OTA</div>
+    <div class="tile">Generative AI</div>
+    <div class="tile">Agentic AI</div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2 class="section-title">Contact</h2>
+  <div class="timeline-card" style="max-width: 500px;">
+    <p><strong>📧 Email:</strong> KavikondalaManoj@gmail.com</p>
+    <p style="margin-top:8px;"><strong>🔗 LinkedIn:</strong> linkedin.com/in/kavikondala-manoj</p>
+    <p style="margin-top:8px;"><strong>💻 GitHub:</strong> github.com/KavikondalaManoj</p>
+  </div>
+</section>
+
+<footer>
+  © 2026 Manoj Kavikondala | Senior Technical Lead
+</footer>
 
 <script src="script.js"></script>
 </body>

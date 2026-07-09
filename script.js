@@ -92,3 +92,4 @@ document.addEventListener('DOMContentLoaded', () => {
     window.location.href = `mailto:${targetEmail}?subject=${computedSubject}&body=${formattedBody}`;
   });
 });
+

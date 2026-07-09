@@ -67,22 +67,92 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* 5. Back to top */
   const scrollTopBtn = document.getElementById('scrollTopBtn');
-  scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  if (scrollTopBtn) {
+    scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  }
 
-  /* 6. Contact form -> mailto */
-  const sendEmailBtn = document.getElementById('sendEmailBtn');
-  sendEmailBtn.addEventListener('click', () => {
-    const name = document.getElementById('senderName').value.trim();
-    const subject = document.getElementById('msgSubject').value.trim();
-    const messageBody = document.getElementById('msgBody').value.trim();
-    if (!name || !subject || !messageBody) {
-      alert('Please fill in your name, subject, and message before sending.');
-      return;
-    }
-    const targetEmail = 'KavikondalaManoj@gmail.com';
-    const computedSubject = encodeURIComponent(`[Portfolio] ${subject}`);
-    const formattedBody = encodeURIComponent(`Hi Manoj,\n\n${messageBody}\n\nBest regards,\n${name}`);
-    window.location.href = `mailto:${targetEmail}?subject=${computedSubject}&body=${formattedBody}`;
-  });
+  /* 6. Recruiter Interface Field Toggling Logic */
+  const recruiterToggle = document.getElementById('recruiterToggle');
+  const recruiterFields = document.getElementById('recruiterFields');
+  const recruiterCompany = document.getElementById('recruiterCompany');
+  const opportunityType = document.getElementById('opportunityType');
+
+  if (recruiterToggle && recruiterFields) {
+    recruiterToggle.addEventListener('change', () => {
+      if (recruiterToggle.checked) {
+        recruiterFields.classList.add('expanded');
+      } else {
+        recruiterFields.classList.remove('expanded');
+        // Clear internal selections on close
+        if (recruiterCompany) recruiterCompany.value = '';
+        if (opportunityType) opportunityType.selectedIndex = 0;
+      }
+    });
+  }
+
+  /* 7. Advanced Contact Form Submission Handler (Formspree Integration) */
+  const contactForm = document.getElementById('contactForm');
+  const formStatus = document.getElementById('formStatus');
+  const sendBtn = document.getElementById('sendEmailBtn');
+
+  if (contactForm) {
+    contactForm.addEventListener('submit', async (event) => {
+      event.preventDefault(); // Stop native post redirect reload
+      
+      const formData = new FormData(contactForm);
+      
+      // Update Button state to pending
+      if (sendBtn) {
+        sendBtn.disabled = true;
+        sendBtn.textContent = 'Sending Message...';
+      }
+      
+      if (formStatus) {
+        formStatus.className = 'form-status-msg';
+        formStatus.style.display = 'none';
+      }
+
+      try {
+        const response = await fetch(contactForm.action, {
+          method: contactForm.method,
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+
+        if (response.ok) {
+          // Success Path execution
+          contactForm.reset();
+          if (recruiterFields) recruiterFields.classList.remove('expanded');
+          
+          if (formStatus) {
+            formStatus.textContent = 'Thank you! Your message has been sent successfully.';
+            formStatus.classList.add('success');
+          }
+        } else {
+          // Failure Path data mapping response
+          const responseData = await response.json();
+          if (formStatus) {
+            formStatus.textContent = responseData.errors 
+              ? responseData.errors.map(err => err.message).join(', ') 
+              : 'Oops! There was a problem submitting your form. Please try again.';
+            formStatus.classList.add('error');
+          }
+        }
+      } catch (error) {
+        // Network connection error fallback
+        if (formStatus) {
+          formStatus.textContent = 'Network connection failed. Please check your internet line and retry.';
+          formStatus.classList.add('error');
+        }
+      } finally {
+        // Restore controls functionality state
+        if (sendBtn) {
+          sendBtn.disabled = false;
+          sendBtn.textContent = 'Send Message';
+        }
+      }
+    });
+  }
 });
-

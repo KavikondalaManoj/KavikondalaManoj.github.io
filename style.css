@@ -259,10 +259,16 @@ button{font-family:inherit;}
 .cta-band h2{font-family:var(--font-display); font-size:clamp(22px,3vw,30px); margin-bottom:10px;}
 .cta-band p{opacity:.9; font-size:14.5px;}
 
-/* ============ CONTACT FORM MODIFICATIONS ============ */
+/* ============ CONTACT FORM FIXED LAYOUT ============ */
 .contact-grid{display:grid; grid-template-columns:1.2fr 1fr; gap:24px; max-width:900px; margin:0 auto;}
 .contact-form{padding:26px; display:flex; flex-direction:column; gap:14px;}
+
+/* CHANGED: Switched to 1fr 1fr grid layout to clean up the newly added email alignment */
 .form-row{display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:2px;}
+
+/* NEW: Subject input line inside .form-row takes up full row width spans */
+.form-row input[id="msgSubject"] { grid-column: span 2; }
+
 .form-group{width:100%;}
 .form-group.full-width{grid-column: span 2;}
 
@@ -370,6 +376,7 @@ button{font-family:inherit;}
 @media (max-width:760px){
   .contact-grid{grid-template-columns:1fr;} 
   .form-row{grid-template-columns:1fr;}
+  .form-row input[id="msgSubject"] { grid-column: span 1; }
   .form-group.full-width{grid-column: span 1;}
 }
 

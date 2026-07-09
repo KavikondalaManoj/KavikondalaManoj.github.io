@@ -153,6 +153,32 @@ button{font-family:inherit;}
 }
 .section.in-view{opacity:1; transform:translateY(0);}
 .section-narrow{max-width:720px; text-align:center;}
+.section-inner{position:relative; z-index:1;}
+
+/* ============ CAR WATERMARKS ============
+   Generic, non-branded silhouette used purely as a decorative accent.
+   Sits behind section content via negative z-index within each section's
+   own stacking context (created by position:relative on .car-section). */
+.car-section{position:relative; overflow:hidden;}
+.section-car{
+  position:absolute; top:50%; z-index:-1;
+  width:min(46vw, 480px); height:auto;
+  transform:translateY(-50%);
+  opacity:.07; pointer-events:none;
+}
+.section-car .hub{opacity:.6;}
+.section-car path, .section-car circle{fill:currentColor;}
+.pos-left{left:-4%;}
+.pos-right{right:-4%; transform:translateY(-50%) scaleX(-1);}
+.car-violet{color:var(--violet);}
+.car-indigo{color:var(--indigo);}
+.car-mint{color:var(--mint);}
+.car-amber{color:#d97706;}
+.car-rose{color:#e11d48;}
+.car-sky{color:#0284c7;}
+@media (max-width:820px){
+  .section-car{width:60vw; opacity:.06;}
+}
 .section-eyebrow{font-family:var(--font-mono); font-size:12px; color:var(--mint); font-weight:600; letter-spacing:.04em; margin-bottom:8px;}
 .section-eyebrow.center{text-align:center;}
 .section-title{font-family:var(--font-display); font-weight:700; font-size:clamp(24px,3vw,32px); margin-bottom:30px;}
@@ -239,6 +265,18 @@ button{font-family:inherit;}
   transition:border-color .2s; resize:vertical;
 }
 .contact-form input:focus, .contact-form textarea:focus{border-color:var(--mint);}
+.recruiter-toggle{
+  display:flex; align-items:center; gap:10px; font-size:13px; color:var(--muted); cursor:pointer; user-select:none;
+}
+.recruiter-toggle input{width:auto;}
+.recruiter-fields{display:flex; flex-direction:column; gap:14px; padding:14px; border:1px dashed var(--border); border-radius:var(--radius-sm); background:var(--bg-soft);}
+.file-label{display:flex; flex-direction:column; gap:6px; font-size:12.5px; color:var(--muted);}
+.file-label input[type="file"]{
+  font-size:12.5px; padding:8px; border-radius:var(--radius-sm); border:1px solid var(--border); background:var(--surface); color:var(--ink);
+}
+.form-status{font-size:12.5px; color:var(--muted); min-height:16px;}
+.form-status.success{color:var(--mint); font-weight:600;}
+.form-status.error{color:#e11d48; font-weight:600;}
 .contact-card{padding:26px; display:flex; flex-direction:column; gap:14px; justify-content:center;}
 .contact-line{display:flex; justify-content:space-between; text-decoration:none; padding-bottom:12px; border-bottom:1px solid var(--border);}
 .contact-line:last-child{border-bottom:none; padding-bottom:0;}

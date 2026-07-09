@@ -7,12 +7,12 @@
 <meta name="description" content="Manoj Kavikondala — Senior Technical Lead specializing in Automotive OTA Validation, HIL Commissioning, and Embedded Software Testing across global OEM and Tier-1 programs.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
-<body data-theme="light">
+<body data-theme="dark">
 
-  <!-- Reusable generic car silhouette, tinted per-section via CSS classes below -->
+  <!-- Reusable generic car silhouette, tinted per-chapter -->
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
     <defs>
       <symbol id="car-shape" viewBox="0 0 280 110">
@@ -30,328 +30,207 @@
   </svg>
 
   <header class="topbar">
-    <a href="#top" class="brand">Manoj Kavikondala</a>
+    <a href="#top" class="brand">MK</a>
     <nav class="topnav" aria-label="Section navigation">
-      <a href="#about" data-target="about">About</a>
-      <a href="#expertise" data-target="expertise">Expertise</a>
-      <a href="#experience" data-target="experience">Experience</a>
-      <a href="#projects" data-target="projects">Projects</a>
-      <a href="#certifications" data-target="certifications">Certifications</a>
-      <a href="#contact" data-target="contact">Contact</a>
+      <a href="#about" data-target="about" data-i18n="nav_about">About</a>
+      <a href="#expertise" data-target="expertise" data-i18n="nav_expertise">Expertise</a>
+      <a href="#experience" data-target="experience" data-i18n="nav_experience">Experience</a>
+      <a href="#projects" data-target="projects" data-i18n="nav_projects">Projects</a>
+      <a href="#certifications" data-target="certifications" data-i18n="nav_certifications">Certifications</a>
+      <a href="#contact" data-target="contact" data-i18n="nav_contact">Contact</a>
     </nav>
     <div class="topbar-actions">
-      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button type="button" class="lang-btn active" data-lang="en">EN</button>
+        <button type="button" class="lang-btn" data-lang="ja">日本語</button>
+        <button type="button" class="lang-btn" data-lang="de">DE</button>
+      </div>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle light mode">
         <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
         <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z"/></svg>
       </button>
-      <a href="assets/resume/Manoj_Kavikondala_Sr_Technical_Lead.pdf" download class="btn btn-resume">Résumé</a>
+      <a href="assets/resume/Manoj_Kavikondala_Sr_Technical_Lead.pdf" download class="btn btn-resume resume-trigger" data-i18n="nav_resume">Résumé</a>
     </div>
   </header>
 
   <main id="top">
 
-    <!-- HERO BAND -->
-    <section class="hero-band" id="hero">
-      <div class="hero-grid">
-
-        <!-- Profile card -->
-        <div class="card profile-card">
-          <div class="avatar-frame">
-            <img src="assets/images/manoj.png" alt="Manoj Kavikondala" class="avatar-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-            <div class="avatar-fallback"><span>MK</span></div>
-            <span class="avatar-status" title="Open to new programs"></span>
-          </div>
-          <h1>Manoj Kavikondala</h1>
-          <p class="profile-role">Senior Technical Lead</p>
-          <p class="profile-loc">Automotive OTA Validation · Japan</p>
-
-          <div class="social-row">
-            <a href="mailto:KavikondalaManoj@gmail.com" aria-label="Email" title="Email">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
-            </a>
-            <a href="https://github.com/KavikondalaManoj" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.98 5.24.98 11.52c0 5.02 3.26 9.28 7.78 10.78.57.1.78-.25.78-.55v-2.15c-3.16.69-3.83-1.36-3.83-1.36-.52-1.32-1.26-1.67-1.26-1.67-1.03-.7.08-.69.08-.69 1.14.08 1.74 1.17 1.74 1.17 1.01 1.73 2.65 1.23 3.3.94.1-.73.4-1.23.72-1.51-2.53-.29-5.19-1.26-5.19-5.62 0-1.24.44-2.26 1.17-3.06-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.14 1.17a10.9 10.9 0 0 1 5.72 0c2.18-1.48 3.14-1.17 3.14-1.17.62 1.58.23 2.75.11 3.04.73.8 1.17 1.82 1.17 3.06 0 4.37-2.67 5.33-5.21 5.61.41.35.77 1.05.77 2.12v3.14c0 .3.21.66.79.55 4.51-1.51 7.77-5.76 7.77-10.78C23.02 5.24 18.27.5 12 .5Z"/></svg>
-            </a>
-            <a href="https://www.linkedin.com/in/kavikondala-manoj" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.15 1.45-2.15 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.11 20.45H3.56V9h3.55z"/></svg>
-            </a>
-          </div>
-
-          <a href="assets/resume/Manoj_Kavikondala_Sr_Technical_Lead.pdf" download class="btn btn-primary btn-full">Download CV</a>
+    <!-- HERO -->
+    <section class="hero-cinematic" id="hero">
+      <svg class="chapter-car car-crimson" viewBox="0 0 280 110" aria-hidden="true"><use href="#car-shape"/></svg>
+      <div class="hero-content">
+        <div class="avatar-frame">
+          <img src="assets/images/manoj.png" alt="Manoj Kavikondala" class="avatar-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="avatar-fallback"><span>MK</span></div>
+          <span class="avatar-status" title="Open to new programs"></span>
         </div>
 
-        <!-- Summary card -->
-        <div class="card summary-card">
-          <p class="card-eyebrow">📋 Professional Summary</p>
-          <p class="summary-text">
-            I work at the point where embedded firmware meets the real world — validating over-the-air updates,
-            diagnostic sessions, and active-safety functions before they reach a customer's vehicle. Twelve-plus
-            years leading OTA and HIL validation programs across global OEM and Tier-1 platforms, from Tokyo to
-            Munich.
-          </p>
+        <p class="hero-eyebrow" data-i18n="hero_eyebrow">HONDA R&amp;D JAPAN — CONNECTED VEHICLE PLATFORMS</p>
+        <h1 class="hero-name">Manoj Kavikondala</h1>
+        <p class="hero-role"><span data-i18n="hero_role">Senior Technical Lead</span><span class="dot-sep">·</span><span data-i18n="hero_role_sub">Automotive OTA Validation Specialist</span></p>
+        <p class="hero-summary" data-i18n="hero_summary">Twelve-plus years signing off software quality on vehicles that update themselves — leading OTA and HIL validation programs across global OEM and Tier-1 platforms, from Tokyo to Munich.</p>
 
-          <p class="card-eyebrow small">📊 Snapshot</p>
-          <div class="snapshot-row">
-            <div class="snapshot-item"><strong>12+</strong><span>Years in Validation</span></div>
-            <div class="snapshot-item"><strong data-count="1000" data-suffix="+">0</strong><span>OTA Cycles / Day</span></div>
-            <div class="snapshot-item"><strong data-count="70" data-suffix="%">0</strong><span>Manual Effort Cut</span></div>
-            <div class="snapshot-item"><strong>4h→45m</strong><span>Report Turnaround</span></div>
-          </div>
-
-          <p class="card-eyebrow small">🎯 Core Domains</p>
-          <div class="tag-row">
-            <span class="tag">OTA Validation</span>
-            <span class="tag">HIL Testing</span>
-            <span class="tag">Active Safety</span>
-            <span class="tag">UDS Diagnostics</span>
-            <span class="tag">ASPICE</span>
-            <span class="tag">Python Automation</span>
-          </div>
+        <div class="hero-stats">
+          <div class="hstat"><strong>12+</strong><span data-i18n="hero_stat1_label">Years in Validation</span></div>
+          <div class="hstat"><strong data-count="1000" data-suffix="+">0</strong><span data-i18n="hero_stat2_label">OTA Cycles / Day</span></div>
+          <div class="hstat"><strong data-count="70" data-suffix="%">0</strong><span data-i18n="hero_stat3_label">Manual Effort Cut</span></div>
+          <div class="hstat"><strong>4h→45m</strong><span data-i18n="hero_stat4_label">Report Turnaround</span></div>
         </div>
 
+        <div class="hero-cta-row">
+          <a href="assets/resume/Manoj_Kavikondala_Sr_Technical_Lead.pdf" download class="btn btn-primary resume-trigger" data-i18n="hero_cta_resume">Download Résumé</a>
+          <a href="#contact" class="btn btn-ghost" data-i18n="hero_cta_contact">Get in Touch</a>
+        </div>
       </div>
-
-      <div class="company-strip">
-        <span>Honda R&amp;D</span><span>BMW</span><span>ZF</span><span>Nexteer</span><span>Ford</span><span>Brose</span><span>BHTC</span>
-      </div>
+      <div class="scroll-cue" aria-hidden="true"><span></span><em data-i18n="hero_scroll">Scroll</em></div>
     </section>
 
     <!-- ABOUT -->
-    <section class="section section-narrow car-section" id="about">
-      <svg class="section-car car-violet pos-left" viewBox="0 0 280 110" aria-hidden="true"><use href="#car-shape"/></svg>
-      <div class="section-inner">
-        <p class="section-eyebrow">🔧 My Approach</p>
-        <h2 class="section-title">About</h2>
-        <p class="about-text">
-          Based in Japan and supporting Honda R&amp;D, I lead OTA and SOTA/FOTA validation programs, commission
-          HIL test benches on dSPACE Scalexio, and write the Python automation that turns thousands of raw test
-          cycles into decisions engineers can act on.
-        </p>
-        <p class="about-text">
-          Along the way I've validated braking and chassis control, HVAC ECUs, exterior lighting, power tailgates,
-          and EPS systems for OEMs including BMW, Ford, Opel, and Bentley — always with one question in mind: what
-          happens if this fails on the road, and how do we prove in advance that it won't.
-        </p>
+    <section class="chapter chapter-violet" id="about">
+      <svg class="chapter-car car-violet pos-left" viewBox="0 0 280 110" aria-hidden="true"><use href="#car-shape"/></svg>
+      <div class="chapter-inner narrow">
+        <p class="chapter-eyebrow" data-i18n="about_eyebrow">MY APPROACH</p>
+        <h2 class="chapter-title" data-i18n="about_title">About</h2>
+        <p class="about-text" data-i18n="about_p1">Based in Japan and supporting Honda R&amp;D, I lead OTA and SOTA/FOTA validation programs, commission HIL test benches on dSPACE Scalexio, and write the Python automation that turns thousands of raw test cycles into decisions engineers can act on.</p>
+        <p class="about-text" data-i18n="about_p2">Along the way I've validated braking and chassis control, HVAC ECUs, exterior lighting, power tailgates, and EPS systems for OEMs including BMW, Ford, Opel, and Bentley — always with one question in mind: what happens if this fails on the road, and how do we prove in advance that it won't.</p>
       </div>
     </section>
 
-    <!-- CORE EXPERTISE -->
-    <section class="section car-section" id="expertise">
-      <svg class="section-car car-indigo pos-right" viewBox="0 0 280 110" aria-hidden="true"><use href="#car-shape"/></svg>
-      <h2 class="section-title center">Core Expertise</h2>
-      <div class="expertise-grid">
-        <div class="card expertise-card">
-          <span class="expertise-code">OTA</span>
-          <h3>OTA &amp; SOTA/FOTA Validation</h3>
-          <p>End-to-end sign-off of software and firmware updates delivered over the air, including rollback,
-             interruption, and fleet-scale regression scenarios.</p>
+    <!-- EXPERTISE -->
+    <section class="chapter chapter-indigo" id="expertise">
+      <svg class="chapter-car car-indigo pos-right" viewBox="0 0 280 110" aria-hidden="true"><use href="#car-shape"/></svg>
+      <div class="chapter-inner">
+        <h2 class="chapter-title center" data-i18n="expertise_title">Core Expertise</h2>
+        <div class="expertise-grid">
+          <div class="glass-card"><span class="expertise-code">OTA</span><h3 data-i18n="exp1_title">OTA &amp; SOTA/FOTA Validation</h3><p data-i18n="exp1_desc">End-to-end sign-off of software and firmware updates delivered over the air, including rollback, interruption, and fleet-scale regression scenarios.</p></div>
+          <div class="glass-card"><span class="expertise-code">HIL</span><h3 data-i18n="exp2_title">HIL Commissioning</h3><p data-i18n="exp2_desc">Building and commissioning Hardware-in-the-Loop rigs on dSPACE Scalexio for braking, chassis, and body-control validation.</p></div>
+          <div class="glass-card"><span class="expertise-code">UDS</span><h3 data-i18n="exp3_title">Diagnostics Verification</h3><p data-i18n="exp3_desc">UDS/diagnostic session testing, DTC verification, and ECU communication validation across CAN and Automotive Ethernet networks.</p></div>
+          <div class="glass-card"><span class="expertise-code">ADAS</span><h3 data-i18n="exp4_title">Active Safety Systems</h3><p data-i18n="exp4_desc">Validation of active safety and driver-assistance functions, from sensor-in-the-loop setups through closed-loop scenario testing.</p></div>
+          <div class="glass-card"><span class="expertise-code">REQ</span><h3 data-i18n="exp5_title">Requirements Traceability</h3><p data-i18n="exp5_desc">ASPICE-aligned requirements engineering with full traceability from spec through test case to release evidence.</p></div>
+          <div class="glass-card"><span class="expertise-code">AUTO</span><h3 data-i18n="exp6_title">Automation Frameworks</h3><p data-i18n="exp6_desc">Python-built pipelines that cut manual validation effort and compress reporting cycles from hours to minutes.</p></div>
         </div>
-        <div class="card expertise-card">
-          <span class="expertise-code">HIL</span>
-          <h3>HIL Commissioning</h3>
-          <p>Building and commissioning Hardware-in-the-Loop rigs on dSPACE Scalexio for braking, chassis, and
-             body-control validation.</p>
-        </div>
-        <div class="card expertise-card">
-          <span class="expertise-code">UDS</span>
-          <h3>Diagnostics Verification</h3>
-          <p>UDS/diagnostic session testing, DTC verification, and ECU communication validation across CAN and
-             Automotive Ethernet networks.</p>
-        </div>
-        <div class="card expertise-card">
-          <span class="expertise-code">ADAS</span>
-          <h3>Active Safety Systems</h3>
-          <p>Validation of active safety and driver-assistance functions, from sensor-in-the-loop setups through
-             closed-loop scenario testing.</p>
-        </div>
-        <div class="card expertise-card">
-          <span class="expertise-code">REQ</span>
-          <h3>Requirements Traceability</h3>
-          <p>ASPICE-aligned requirements engineering with full traceability from spec through test case to
-             release evidence.</p>
-        </div>
-        <div class="card expertise-card">
-          <span class="expertise-code">AUTO</span>
-          <h3>Automation Frameworks</h3>
-          <p>Python-built pipelines that cut manual validation effort and compress reporting cycles from hours
-             to minutes.</p>
-        </div>
-      </div>
 
-      <div class="skills-block">
-        <p class="section-eyebrow center">🧰 Technical Skills</p>
-        <div class="chip-groups">
-          <div class="chip-group"><h4>Test &amp; Simulation</h4><div class="chip-row"><span class="chip">dSPACE Scalexio</span><span class="chip">AutomationDesk</span><span class="chip">ModelDesk</span><span class="chip">CANoe</span><span class="chip">CANape</span></div></div>
-          <div class="chip-group"><h4>Protocols &amp; Networks</h4><div class="chip-row"><span class="chip">CAN / CAPL</span><span class="chip">UDS</span><span class="chip">Automotive Ethernet</span><span class="chip">SOTA / FOTA</span></div></div>
-          <div class="chip-group"><h4>Automation &amp; Dev</h4><div class="chip-row"><span class="chip">Python</span><span class="chip">CI/CD Validation</span><span class="chip">PyQt6</span><span class="chip">Git</span></div></div>
-          <div class="chip-group"><h4>Process &amp; Quality</h4><div class="chip-row"><span class="chip">ASPICE</span><span class="chip">Requirements Traceability</span><span class="chip">ISTQB Practices</span><span class="chip">Lean Six Sigma</span></div></div>
+        <div class="skills-block">
+          <p class="chapter-eyebrow center" data-i18n="skills_title">Technical Skills</p>
+          <div class="chip-groups">
+            <div class="chip-group"><h4 data-i18n="skills_group1">Test &amp; Simulation</h4><div class="chip-row"><span class="chip">dSPACE Scalexio</span><span class="chip">AutomationDesk</span><span class="chip">ModelDesk</span><span class="chip">CANoe</span><span class="chip">CANape</span></div></div>
+            <div class="chip-group"><h4 data-i18n="skills_group2">Protocols &amp; Networks</h4><div class="chip-row"><span class="chip">CAN / CAPL</span><span class="chip">UDS</span><span class="chip">Automotive Ethernet</span><span class="chip">SOTA / FOTA</span></div></div>
+            <div class="chip-group"><h4 data-i18n="skills_group3">Automation &amp; Dev</h4><div class="chip-row"><span class="chip">Python</span><span class="chip">CI/CD Validation</span><span class="chip">PyQt6</span><span class="chip">Git</span></div></div>
+            <div class="chip-group"><h4 data-i18n="skills_group4">Process &amp; Quality</h4><div class="chip-row"><span class="chip">ASPICE</span><span class="chip">Requirements Traceability</span><span class="chip">ISTQB Practices</span><span class="chip">Lean Six Sigma</span></div></div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- EXPERIENCE (publication-list style) -->
-    <section class="section car-section" id="experience">
-      <svg class="section-car car-mint pos-left" viewBox="0 0 280 110" aria-hidden="true"><use href="#car-shape"/></svg>
-      <h2 class="section-title center">Professional Experience</h2>
-      <ul class="exp-list">
-        <li class="exp-row">
-          <div class="exp-main">
-            <span class="exp-title">Senior Technical Lead <span class="exp-current">Current</span></span>
-            <span class="exp-company">Honda R&amp;D Japan</span>
-            <p class="exp-desc">Leading OTA validation programs, automation initiatives, requirements-driven
-               testing, and reporting automation for connected vehicle platforms.</p>
-          </div>
-        </li>
-        <li class="exp-row">
-          <div class="exp-main">
-            <span class="exp-title">Technical Lead — HIL &amp; Active Safety</span>
-            <span class="exp-company">ZF</span>
-            <p class="exp-desc">Delivered HIL validation environments for braking and chassis control functions
-               using dSPACE Scalexio and ModelDesk.</p>
-          </div>
-        </li>
-        <li class="exp-row">
-          <div class="exp-main">
-            <span class="exp-title">Test Coordinator</span>
-            <span class="exp-company">Brose</span>
-            <p class="exp-desc">Managed validation activities for Power Operated Tailgate and Electronic Power
-               Window systems.</p>
-          </div>
-        </li>
-        <li class="exp-row">
-          <div class="exp-main">
-            <span class="exp-title">Senior Test Manager</span>
-            <span class="exp-company">Nexteer</span>
-            <p class="exp-desc">Led EPS validation programs and automated regression testing through dSPACE
-               toolchain integration.</p>
-          </div>
-        </li>
-        <li class="exp-row">
-          <div class="exp-main">
-            <span class="exp-title">Verification &amp; Diagnostics Engineer</span>
-            <span class="exp-company">BHTC Germany</span>
-            <p class="exp-desc">Executed HVAC ECU validation programs for BMW, Opel, and Bentley platforms.</p>
-          </div>
-        </li>
-        <li class="exp-row">
-          <div class="exp-main">
-            <span class="exp-title">Software Verification Engineer</span>
-            <span class="exp-company">Ford Programs</span>
-            <p class="exp-desc">Validated exterior lighting systems and developed reusable automation libraries.</p>
-          </div>
-        </li>
-      </ul>
+    <!-- EXPERIENCE -->
+    <section class="chapter chapter-mint" id="experience">
+      <svg class="chapter-car car-mint pos-left" viewBox="0 0 280 110" aria-hidden="true"><use href="#car-shape"/></svg>
+      <div class="chapter-inner">
+        <h2 class="chapter-title center" data-i18n="experience_title">Professional Experience</h2>
+        <ul class="exp-list">
+          <li class="exp-row"><span class="exp-title" data-i18n="job1_title">Senior Technical Lead</span><span class="exp-current" data-i18n="exp_current">Current</span><span class="exp-company" data-i18n="job1_company">Honda R&amp;D Japan</span><p class="exp-desc" data-i18n="job1_desc">Leading OTA validation programs, automation initiatives, requirements-driven testing, and reporting automation for connected vehicle platforms.</p></li>
+          <li class="exp-row"><span class="exp-title" data-i18n="job2_title">Technical Lead — HIL &amp; Active Safety</span><span class="exp-company" data-i18n="job2_company">ZF</span><p class="exp-desc" data-i18n="job2_desc">Delivered HIL validation environments for braking and chassis control functions using dSPACE Scalexio and ModelDesk.</p></li>
+          <li class="exp-row"><span class="exp-title" data-i18n="job3_title">Test Coordinator</span><span class="exp-company" data-i18n="job3_company">Brose</span><p class="exp-desc" data-i18n="job3_desc">Managed validation activities for Power Operated Tailgate and Electronic Power Window systems.</p></li>
+          <li class="exp-row"><span class="exp-title" data-i18n="job4_title">Senior Test Manager</span><span class="exp-company" data-i18n="job4_company">Nexteer</span><p class="exp-desc" data-i18n="job4_desc">Led EPS validation programs and automated regression testing through dSPACE toolchain integration.</p></li>
+          <li class="exp-row"><span class="exp-title" data-i18n="job5_title">Verification &amp; Diagnostics Engineer</span><span class="exp-company" data-i18n="job5_company">BHTC Germany</span><p class="exp-desc" data-i18n="job5_desc">Executed HVAC ECU validation programs for BMW, Opel, and Bentley platforms.</p></li>
+          <li class="exp-row"><span class="exp-title" data-i18n="job6_title">Software Verification Engineer</span><span class="exp-company" data-i18n="job6_company">Ford Programs</span><p class="exp-desc" data-i18n="job6_desc">Validated exterior lighting systems and developed reusable automation libraries.</p></li>
+        </ul>
+      </div>
     </section>
 
     <!-- PROJECTS -->
-    <section class="section car-section" id="projects">
-      <svg class="section-car car-amber pos-right" viewBox="0 0 280 110" aria-hidden="true"><use href="#car-shape"/></svg>
-      <h2 class="section-title center">Featured Projects</h2>
-      <div class="project-grid">
-        <div class="card project-card">
-          <div class="project-banner banner-1"><span>tool</span></div>
-          <h3>Report Generating Tool</h3>
-          <p>Automated engineering report generation platform reducing manual analysis effort and accelerating
-             stakeholder reporting.</p>
-        </div>
-        <div class="card project-card">
-          <div class="project-banner banner-2"><span>pipeline</span></div>
-          <h3>ARG — Automated Report Generation</h3>
-          <p>Framework for automated extraction, aggregation, and reporting of automotive validation results.</p>
-        </div>
-        <div class="card project-card">
-          <div class="project-banner banner-3"><span>PyQt6</span></div>
-          <h3>DriveWidget</h3>
-          <p>Desktop application for monitoring local and network drives with real-time storage visibility.</p>
-        </div>
-        <div class="card project-card">
-          <div class="project-banner banner-4"><span>utility</span></div>
-          <h3>PDF Tools</h3>
-          <p>Collection of PDF automation utilities for engineering documentation workflows.</p>
-        </div>
-        <div class="card project-card">
-          <div class="project-banner banner-5"><span>parser</span></div>
-          <h3>BLF Time Extractor</h3>
-          <p>Automotive engineering utility for extracting and analyzing timestamps from BLF log files.</p>
-        </div>
-        <div class="card project-card">
-          <div class="project-banner banner-6"><span>desktop</span></div>
-          <h3>Quick Launcher Panel</h3>
-          <p>Streamlines access to commonly used engineering applications from a single panel.</p>
+    <section class="chapter chapter-amber" id="projects">
+      <svg class="chapter-car car-amber pos-right" viewBox="0 0 280 110" aria-hidden="true"><use href="#car-shape"/></svg>
+      <div class="chapter-inner">
+        <h2 class="chapter-title center" data-i18n="projects_title">Featured Projects</h2>
+        <div class="project-grid">
+          <div class="glass-card project-card"><div class="project-banner banner-1"><span data-i18n="proj1_tag">tool</span></div><h3 data-i18n="proj1_title">Report Generating Tool</h3><p data-i18n="proj1_desc">Automated engineering report generation platform reducing manual analysis effort and accelerating stakeholder reporting.</p></div>
+          <div class="glass-card project-card"><div class="project-banner banner-2"><span data-i18n="proj2_tag">pipeline</span></div><h3 data-i18n="proj2_title">ARG — Automated Report Generation</h3><p data-i18n="proj2_desc">Framework for automated extraction, aggregation, and reporting of automotive validation results.</p></div>
+          <div class="glass-card project-card"><div class="project-banner banner-3"><span data-i18n="proj3_tag">PyQt6</span></div><h3 data-i18n="proj3_title">DriveWidget</h3><p data-i18n="proj3_desc">Desktop application for monitoring local and network drives with real-time storage visibility.</p></div>
+          <div class="glass-card project-card"><div class="project-banner banner-4"><span data-i18n="proj4_tag">utility</span></div><h3 data-i18n="proj4_title">PDF Tools</h3><p data-i18n="proj4_desc">Collection of PDF automation utilities for engineering documentation workflows.</p></div>
+          <div class="glass-card project-card"><div class="project-banner banner-5"><span data-i18n="proj5_tag">parser</span></div><h3 data-i18n="proj5_title">BLF Time Extractor</h3><p data-i18n="proj5_desc">Automotive engineering utility for extracting and analyzing timestamps from BLF log files.</p></div>
+          <div class="glass-card project-card"><div class="project-banner banner-6"><span data-i18n="proj6_tag">desktop</span></div><h3 data-i18n="proj6_title">Quick Launcher Panel</h3><p data-i18n="proj6_desc">Streamlines access to commonly used engineering applications from a single panel.</p></div>
         </div>
       </div>
     </section>
 
     <!-- ACHIEVEMENTS -->
-    <section class="section car-section" id="achievements">
-      <svg class="section-car car-rose pos-left" viewBox="0 0 280 110" aria-hidden="true"><use href="#car-shape"/></svg>
-      <h2 class="section-title center">Key Achievements</h2>
-      <div class="achv-grid">
-        <div class="card achv-card"><span class="achv-num">70%</span><p>Reduction in manual validation effort through custom Python automation frameworks.</p></div>
-        <div class="card achv-card"><span class="achv-num">1000+</span><p>OTA test cycles reviewed daily across connected-vehicle release trains.</p></div>
-        <div class="card achv-card"><span class="achv-num">4h→45m</span><p>Reporting time compressed for validation stakeholders and program leadership.</p></div>
-        <div class="card achv-card"><span class="achv-num">7</span><p>Global OEM and Tier-1 programs delivered across Japan, Germany, and the US.</p></div>
+    <section class="chapter chapter-rose" id="achievements">
+      <svg class="chapter-car car-rose pos-left" viewBox="0 0 280 110" aria-hidden="true"><use href="#car-shape"/></svg>
+      <div class="chapter-inner">
+        <h2 class="chapter-title center" data-i18n="achievements_title">Key Achievements</h2>
+        <div class="achv-grid">
+          <div class="glass-card achv-card"><span class="achv-num">70%</span><p data-i18n="achv1_desc">Reduction in manual validation effort through custom Python automation frameworks.</p></div>
+          <div class="glass-card achv-card"><span class="achv-num">1000+</span><p data-i18n="achv2_desc">OTA test cycles reviewed daily across connected-vehicle release trains.</p></div>
+          <div class="glass-card achv-card"><span class="achv-num">4h→45m</span><p data-i18n="achv3_desc">Reporting time compressed for validation stakeholders and program leadership.</p></div>
+          <div class="glass-card achv-card"><span class="achv-num">7</span><p data-i18n="achv4_desc">Global OEM and Tier-1 programs delivered across Japan, Germany, and the US.</p></div>
+        </div>
       </div>
     </section>
 
     <!-- CERTIFICATIONS -->
-    <section class="section" id="certifications">
-      <h2 class="section-title center">Certifications</h2>
-      <div class="badge-cloud">
-        <span class="badge">ISTQB CTFL</span>
-        <span class="badge">Scrum Master Certified</span>
-        <span class="badge">Lean Six Sigma Foundations</span>
-        <span class="badge">Automotive OTA</span>
-        <span class="badge">Generative AI Practitioner</span>
-        <span class="badge">Agentic AI Practitioner</span>
+    <section class="chapter chapter-sky" id="certifications">
+      <svg class="chapter-car car-sky pos-right" viewBox="0 0 280 110" aria-hidden="true"><use href="#car-shape"/></svg>
+      <div class="chapter-inner">
+        <h2 class="chapter-title center" data-i18n="certifications_title">Certifications</h2>
+        <div class="badge-cloud">
+          <span class="badge">ISTQB CTFL</span>
+          <span class="badge">Scrum Master Certified</span>
+          <span class="badge">Lean Six Sigma Foundations</span>
+          <span class="badge">Automotive OTA</span>
+          <span class="badge">Generative AI Practitioner</span>
+          <span class="badge">Agentic AI Practitioner</span>
+        </div>
       </div>
     </section>
 
     <!-- CTA BAND -->
-    <section class="cta-band">
-      <h2>Let's ship the next release together 🚗</h2>
-      <p>Open to conversations on OTA validation, HIL programs, and automation leadership roles.</p>
-      <a href="#contact" class="btn btn-cta">Get in Touch</a>
+    <section class="cta-cinematic">
+      <h2 data-i18n="cta_title">Let's ship the next release together 🚗</h2>
+      <p data-i18n="cta_sub">Open to conversations on OTA validation, HIL programs, and automation leadership roles.</p>
+      <a href="#contact" class="btn btn-cta" data-i18n="cta_button">Get in Touch</a>
     </section>
 
     <!-- CONTACT -->
-    <section class="section car-section" id="contact">
-      <svg class="section-car car-sky pos-right" viewBox="0 0 280 110" aria-hidden="true"><use href="#car-shape"/></svg>
-      <h2 class="section-title center">Contact</h2>
-      <div class="contact-grid">
-        <form class="card contact-form" id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" enctype="multipart/form-data">
-          <div class="form-row">
-            <input type="text" name="name" id="senderName" placeholder="Your name *" required>
-            <input type="email" name="email" id="senderEmail" placeholder="Your email *" required>
-          </div>
-          <textarea name="message" id="msgBody" rows="4" placeholder="Message *" required></textarea>
-
-          <label class="recruiter-toggle">
-            <input type="checkbox" id="recruiterCheck">
-            <span>I'm a recruiter / hiring manager — add role details</span>
-          </label>
-
-          <div class="recruiter-fields" id="recruiterFields" hidden>
+    <section class="chapter chapter-crimson" id="contact">
+      <svg class="chapter-car car-crimson pos-left" viewBox="0 0 280 110" aria-hidden="true"><use href="#car-shape"/></svg>
+      <div class="chapter-inner">
+        <h2 class="chapter-title center" data-i18n="contact_title">Contact</h2>
+        <div class="contact-grid">
+          <form class="glass-card contact-form" id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" enctype="multipart/form-data">
             <div class="form-row">
-              <input type="text" name="company" id="companyName" placeholder="Company (optional)">
-              <input type="text" name="role" id="roleTitle" placeholder="Role you're hiring for (optional)">
+              <input type="text" name="name" id="senderName" data-i18n-placeholder="contact_name_ph" placeholder="Your name *" required>
+              <input type="email" name="email" id="senderEmail" data-i18n-placeholder="contact_email_ph" placeholder="Your email *" required>
             </div>
-            <label class="file-label" for="jdUpload">
-              Job description (optional, PDF/DOC)
-              <input type="file" name="jd_file" id="jdUpload" accept=".pdf,.doc,.docx">
+            <textarea name="message" id="msgBody" rows="4" data-i18n-placeholder="contact_message_ph" placeholder="Message *" required></textarea>
+
+            <label class="recruiter-toggle">
+              <input type="checkbox" id="recruiterCheck">
+              <span data-i18n="contact_recruiter_label">I'm a recruiter / hiring manager — add role details</span>
             </label>
+
+            <div class="recruiter-fields" id="recruiterFields" hidden>
+              <div class="form-row">
+                <input type="text" name="company" id="companyName" data-i18n-placeholder="contact_company_ph" placeholder="Company (optional)">
+                <input type="text" name="role" id="roleTitle" data-i18n-placeholder="contact_role_ph" placeholder="Role you're hiring for (optional)">
+              </div>
+              <label class="file-label" for="jdUpload">
+                <span data-i18n="contact_jd_label">Job description (optional, PDF/DOC)</span>
+                <input type="file" name="jd_file" id="jdUpload" accept=".pdf,.doc,.docx">
+              </label>
+            </div>
+
+            <input type="hidden" name="_subject" value="New message from portfolio site">
+            <button type="submit" class="btn btn-primary" id="sendEmailBtn" data-i18n="contact_send">Send Message</button>
+            <p class="form-status" id="formStatus" aria-live="polite"></p>
+          </form>
+
+          <div class="glass-card contact-card">
+            <a href="mailto:KavikondalaManoj@gmail.com" class="contact-line"><span class="contact-key" data-i18n="contact_key_email">Email</span><span class="contact-val">KavikondalaManoj@gmail.com</span></a>
+            <a href="https://www.linkedin.com/in/kavikondala-manoj" target="_blank" rel="noopener" class="contact-line"><span class="contact-key" data-i18n="contact_key_linkedin">LinkedIn</span><span class="contact-val">/in/kavikondala-manoj</span></a>
+            <a href="https://github.com/KavikondalaManoj" target="_blank" rel="noopener" class="contact-line"><span class="contact-key" data-i18n="contact_key_github">GitHub</span><span class="contact-val">/KavikondalaManoj</span></a>
+            <span class="contact-line"><span class="contact-key" data-i18n="contact_key_based">Based</span><span class="contact-val" data-i18n="contact_val_based">Japan (Honda R&amp;D)</span></span>
           </div>
-
-          <input type="hidden" name="_subject" value="New message from portfolio site">
-          <button type="submit" class="btn btn-primary" id="sendEmailBtn">Send Message</button>
-          <p class="form-status" id="formStatus" aria-live="polite"></p>
-        </form>
-
-        <div class="card contact-card">
-          <a href="mailto:KavikondalaManoj@gmail.com" class="contact-line"><span class="contact-key">Email</span><span class="contact-val">KavikondalaManoj@gmail.com</span></a>
-          <a href="https://www.linkedin.com/in/kavikondala-manoj" target="_blank" rel="noopener" class="contact-line"><span class="contact-key">LinkedIn</span><span class="contact-val">/in/kavikondala-manoj</span></a>
-          <a href="https://github.com/KavikondalaManoj" target="_blank" rel="noopener" class="contact-line"><span class="contact-key">GitHub</span><span class="contact-val">/KavikondalaManoj</span></a>
-          <span class="contact-line"><span class="contact-key">Based</span><span class="contact-val">Japan (Honda R&amp;D)</span></span>
         </div>
       </div>
     </section>
@@ -364,9 +243,37 @@
       <a href="https://github.com/KavikondalaManoj" target="_blank" rel="noopener" aria-label="GitHub">GH</a>
       <a href="https://www.linkedin.com/in/kavikondala-manoj" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
     </div>
-    <p>© 2026 Manoj Kavikondala · Senior Technical Lead, Automotive OTA Validation</p>
-    <button class="back-top" id="scrollTopBtn" aria-label="Back to top">↑ Top</button>
+    <p data-i18n="footer_copy">© 2026 Manoj Kavikondala · Senior Technical Lead, Automotive OTA Validation</p>
+    <button class="back-top" id="scrollTopBtn" aria-label="Back to top"><span data-i18n="footer_back_top">Top</span></button>
   </footer>
+
+  <!-- RESUME GATE MODAL -->
+  <div class="modal-overlay" id="resumeModalOverlay" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="resumeModalTitle">
+      <button type="button" class="modal-close" id="resumeModalClose" aria-label="Close">&times;</button>
+      <h3 id="resumeModalTitle" data-i18n="resume_modal_title">Before you download…</h3>
+      <p class="modal-sub" data-i18n="resume_modal_sub">Just a quick intro so I know who's reaching out — takes 10 seconds, then your download starts automatically.</p>
+
+      <form id="resumeGateForm">
+        <input type="text" name="name" data-i18n-placeholder="resume_name_ph" placeholder="Full name *" required>
+        <input type="email" name="email" data-i18n-placeholder="resume_email_ph" placeholder="Email *" required>
+        <input type="tel" name="phone" data-i18n-placeholder="resume_phone_ph" placeholder="Mobile number *" required pattern="[0-9+\-\s()]{7,}">
+
+        <select name="reason" id="resumeReason" required>
+          <option value="" disabled selected data-i18n="resume_reason_default">Why are you downloading this? *</option>
+          <option value="Recruitment / Hiring" data-i18n="resume_reason1">Recruitment / Hiring</option>
+          <option value="Networking" data-i18n="resume_reason2">Networking</option>
+          <option value="Reference / Research" data-i18n="resume_reason3">Reference / Research</option>
+          <option value="Other" data-i18n="resume_reason4">Other</option>
+        </select>
+        <input type="text" name="reason_other" id="resumeReasonOther" data-i18n-placeholder="resume_reason_other_ph" placeholder="Please specify" hidden>
+
+        <input type="hidden" name="_subject" value="Résumé download request">
+        <button type="submit" class="btn btn-primary btn-full" id="resumeSubmitBtn" data-i18n="resume_submit">Get Résumé</button>
+        <p class="form-status" id="resumeFormStatus" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
 
 <script src="script.js"></script>
 </body>

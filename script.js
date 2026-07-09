@@ -6,12 +6,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
   if (prefersDark) body.setAttribute('data-theme', 'dark');
 
-  if (themeToggle) {
-    themeToggle.addEventListener('click', () => {
-      const next = body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-      body.setAttribute('data-theme', next);
-    });
-  }
+  themeToggle.addEventListener('click', () => {
+    const next = body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    body.setAttribute('data-theme', next);
+  });
 
   /* 2. Animated snapshot counters */
   const counters = document.querySelectorAll('[data-count]');
@@ -69,25 +67,57 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* 5. Back to top */
   const scrollTopBtn = document.getElementById('scrollTopBtn');
-  if (scrollTopBtn) {
-    scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+  /* 6. Recruiter fields toggle */
+  const recruiterCheck = document.getElementById('recruiterCheck');
+  const recruiterFields = document.getElementById('recruiterFields');
+  if (recruiterCheck && recruiterFields) {
+    recruiterCheck.addEventListener('change', () => {
+      recruiterFields.hidden = !recruiterCheck.checked;
+    });
   }
 
-  /* 6. Contact form submission handling (Utilizing native validation mechanics) */
+  /* 7. Contact form -> Formspree (submits via fetch so the page never leaves) */
   const contactForm = document.getElementById('contactForm');
+  const formStatus = document.getElementById('formStatus');
   if (contactForm) {
-    contactForm.addEventListener('submit', (event) => {
-      event.preventDefault(); // Capture execution to apply custom protocol redirect securely
-      
-      const name = document.getElementById('senderName').value.trim();
-      const subject = document.getElementById('msgSubject').value.trim();
-      const messageBody = document.getElementById('msgBody').value.trim();
-      
-      const targetEmail = 'KavikondalaManoj@gmail.com';
-      const computedSubject = encodeURIComponent(`[Portfolio] ${subject}`);
-      const formattedBody = encodeURIComponent(`Hi Manoj,\n\n${messageBody}\n\nBest regards,\n${name}`);
-      
-      window.location.href = `mailto:${targetEmail}?subject=${computedSubject}&body=${formattedBody}`;
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const submitBtn = document.getElementById('sendEmailBtn');
+      const formData = new FormData(contactForm);
+
+      if (contactForm.action.includes('YOUR_FORM_ID')) {
+        formStatus.textContent = 'Form is not connected yet — set your Formspree endpoint in index.html.';
+        formStatus.className = 'form-status error';
+        return;
+      }
+
+      submitBtn.disabled = true;
+      formStatus.textContent = 'Sending…';
+      formStatus.className = 'form-status';
+
+      try {
+        const response = await fetch(contactForm.action, {
+          method: 'POST',
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        });
+        if (response.ok) {
+          formStatus.textContent = 'Message sent — thanks for reaching out! I\'ll reply by email soon.';
+          formStatus.className = 'form-status success';
+          contactForm.reset();
+          if (recruiterFields) recruiterFields.hidden = true;
+        } else {
+          formStatus.textContent = 'Something went wrong sending that. Please try again or email directly.';
+          formStatus.className = 'form-status error';
+        }
+      } catch (err) {
+        formStatus.textContent = 'Network error — please try again or email directly.';
+        formStatus.className = 'form-status error';
+      } finally {
+        submitBtn.disabled = false;
+      }
     });
   }
 });
